@@ -10,18 +10,28 @@
 
 </head>
 <body>
-    <input type="text" id="input-field">
-    <input type="text" id="pro-nouns">
+    Name:<input type="text" id="input-field">
+    Pronouns:<input type="text" id="pro-nouns">
     <input type="color"id="color-field">
-    <select id="Font" name="selectFont" onchange="Name">
-        <option> Serif </option>
-        <option> Arial </option>
-        <option> Sans-Serif </option>                                  
-        <option> Tahoma </option>
-        <option> Verdana </option>
-        <option> Lucida Sans Unicode </option>                               
+    <br/>
+    <select id="selecth1FontFamily" name="selectFontFamily" onchange="updateh1family();">
+      <option> Serif </option>
+      <option> Arial </option>
+      <option> Sans-Serif </option>                                  
+      <option> Tahoma </option>
+      <option> Verdana </option>
+      <option> Lucida Sans Unicode </option>                               
     </select>
-
+      <script>
+        function updateh1family() {
+          const selector = document.getElementById('selecth1FontFamily');
+          const family = selector.options[selector.selectedIndex].value;
+          const h1 = document.getElementById('liveSpan')
+          h1.style.fontFamily = family; 
+                 
+        }
+  
+      </script>
 <button id="sub-btn">Update</button>
       
     <main>
@@ -32,11 +42,11 @@
          </section>
         
          <section class="middle" id="middle-section">
-        <span id= "Name">Aemilius</span>
-        <span id= "Pronouns">He/Him</span>
+        <h1 id="liveSpan"><span id="Name">Aemilius</span></h1>
+        <span id="Pronouns">He/Him</span>
     </section>
        
-        <section class="bottom"></section>
+        <section class="bottom" id="bottom-section"></section>
     </main>
     <script type="module" src="app.js">
 

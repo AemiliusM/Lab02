@@ -1,30 +1,17 @@
-// console.log("hello")
-// console.log(
-    // "hellooo!")
-// const myElement = document.getElementById('top-section');
-// console.log(myElement);
 const submitButton = document.getElementById('sub-btn');
 const inputField = document.getElementById('input-field');
-const pronounfield = document.getElementById('pro-nouns')
-const colorfield = document.getElementById('color-field')
-const namespan =document.getElementById('Name');
-const pronounspan = document.getElementById('Pronouns')
+const pronounfield = document.getElementById('pro-nouns');
+const colorfield = document.getElementById('color-field');
+const namespan = document.getElementById('Name');
+const pronounspan = document.getElementById('Pronouns');
 const topSection = document.getElementById('top-section');
-function Name() {
+const bottomSection = document.getElementById('bottom-section');
 
-    var selector = document.getElementById('selectFont');
-    var cssPreviewSpan = document.getElementById('Font');
-
-    cssPreviewSpan.innerHTML = selector.value;
-    
-
-    var h1 = document.getElementById('liveh1')
-    h1.style.fontFamily = selector.value;
-}
 submitButton.addEventListener('click', ()=>{
     
- topSection.style.backgroundColor = colorfield.value;
+    topSection.style.backgroundColor = colorfield.value;
+    bottomSection.style.backgroundColor = colorfield.value;
     namespan.textContent = inputField.value.toUpperCase();
     pronounspan.textContent = pronounfield.value;
     
-})
+});
